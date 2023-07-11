@@ -39,7 +39,7 @@ jobs:
     #     git config --global user.email "3427432494@qq.com"
 
     - name: 部署到pages
-      uses: JamesIves/github-pages-deploy-action@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with: 
         branch: wy-page
         folder: dist/

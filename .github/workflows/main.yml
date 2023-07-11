@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  PATH: D:\编程软件\Git\bin:$PATH
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,6 +26,17 @@ jobs:
     
     - name: 构建项目
       run: npm run build
+
+    - name: Checkout repository
+      run: D:\编程软件\Git\bin\git clone <git@github.com:shake03telescope/second-vue-app.git>
+
+    - name: Install Git
+      run: sudo apt-get update && sudo apt-get install -y git
+
+    - name: Set git config
+      run: |
+        git config --global user.name "telescope03shake"
+        git config --global user.email "3427432494@qq.com"
 
     - name: 部署到pages
       uses: JamesIves/github-pages-deploy-action@v4

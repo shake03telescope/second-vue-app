@@ -28,5 +28,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with: 
         branch: wy-page
-        folder:dist/
+        folder: dist/
 

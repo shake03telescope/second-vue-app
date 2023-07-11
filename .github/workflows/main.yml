@@ -12,3 +12,21 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: 设置运行环境Node.js
+      uses: actions/setup-node@v3
+      with: 
+        node-version:16
+
+    - name: 安装依赖
+      run: npm install 
+    
+    - name: 构建项目
+      run: npm run build
+
+    - name: 部署到pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with: 
+        branch: wy-page
+        folder:dist/
+
